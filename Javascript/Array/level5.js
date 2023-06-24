@@ -1,0 +1,81 @@
+const arr = [2,5,6,7]
+//calculate the sum of the array using either for of or for in
+let sum=0;
+for(let i of arr)
+  {
+    sum+=i
+  }
+console.log(sum)
+
+
+//high level
+const users =['hari', 'shyam', 'hari','shyam','hari','shova']
+//hint: how to know hari was already there in users array
+//hint2: how to remove particular index/item
+//remove from array if duplicate
+
+
+// Answer 1
+
+// users.filter((element,index)=>{
+//   if(!(users.indexOf(element)<index))
+//     {
+//       return element
+//     }
+// })
+
+
+//Answer 2
+let tempUniqueValues=users.map((element,index)=>{
+  let isRepeated=false;
+  if((users.indexOf(element)<index))
+    {
+      isRepeated=true;
+      return [element,isRepeated]
+    }
+  else{
+    return [element,false]
+  }
+})
+//This code is for asking questions only 
+// for(let i in hello)
+//   {
+//     console.log(hello)
+//     if(hello[i][1])
+//       {
+//         hello.splice(i,1);
+//         i--;
+//       }
+//   }
+// // console.log(hello)
+for(let i=0;i<tempUniqueValues.length;i++)
+  {
+    if(tempUniqueValues[i][1])
+      {
+        tempUniqueValues.splice(i,1);
+        i--;
+      }
+  }
+let uniqueNames=tempUniqueValues.map((element)=>{
+  return element[0]
+})
+console.log(uniqueNames)
+
+
+
+
+
+
+
+
+const newArr = [[4,5], [5,7], [7,2]]
+//calculate the sum of all the odd numbers inside this nested array
+newSum=0
+for (let i of newArr)
+  {
+    for(let j of i)
+      {
+        j%2==0 ? newSum : newSum+=j
+      }
+  }
+console.log(newSum)
