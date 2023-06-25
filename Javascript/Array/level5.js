@@ -79,3 +79,37 @@ for (let i of newArr)
       }
   }
 console.log(newSum)
+
+const myDetails = [
+  {id:3, name: 'hari'},
+  {id:5, name: 'shyam'},
+  {id:6, name: 'gopal'},
+]
+let output=[]
+for(let i of myDetails)
+{
+  output.push(i.id)
+}
+console.log(output)
+// return only array of ids: expected output  [3,5,6]
+
+
+const userDetails= [
+  {score: 0, name:'hari', marks: [10,3,23]},
+  {score: 0, name:'shyam', marks: [50,23,23]},
+  {score: 0, name:'shyam',marks: [20,13,43]},
+]
+for(let i of userDetails)
+{
+  i.score=i.marks.reduce((accumator,value)=>{
+    return accumator+=value;
+  },0)
+}
+userDetails
+//loop over the arr of objects and calculate total score, expected output is:
+
+// [
+//     {score: 36, name:'hari', marks: [10,3,23]},
+//     {score: 96, name:'shyam', marks: [50,23,23]},
+//     {score: 76, name:'shyam',marks: [20,13,43]},
+// ]
