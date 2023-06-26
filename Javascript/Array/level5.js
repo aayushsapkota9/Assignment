@@ -113,3 +113,24 @@ userDetails
 //     {score: 96, name:'shyam', marks: [50,23,23]},
 //     {score: 76, name:'shyam',marks: [20,13,43]},
 // ]
+const arr1 = ['ram','shyam','hari']
+const arr2 = ['ram','shyam','hari','gopal','krish']
+
+// ['gopal','krish']
+
+
+// let unique=[]
+// arr2.map((item)=>{
+// if(!arr1.includes(item))
+// {
+//  unique.push(item)
+// }
+    
+// })
+// unique
+arr2.filter((item)=>{
+if(!arr1.includes(item))
+{
+ return item
+}
+})
